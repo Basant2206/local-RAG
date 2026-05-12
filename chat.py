@@ -1,7 +1,6 @@
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_classic.chains import RetrievalQA
-
 from langchain_ollama import OllamaLLM
 from langchain_core.prompts import PromptTemplate
 
@@ -14,7 +13,7 @@ def chat_with_docs():
     )
 
     # define llm
-    llm = OllamaLLM(model="gemma4")     # llama3.2, mistral
+    llm = OllamaLLM(model="mistral")     # llama3.2, mistral
 
     # Custom Prompt Template
     template = """ Use the following pieces of context to answer the question at the end. 
