@@ -9,7 +9,7 @@ def create_vector_db(path):
     raw_docs = loader.load()
 
     # load pdf, overlap to prevent context loss
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size = 50, chunk_overlap=10)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size = 500, chunk_overlap=50)
     documents = text_splitter.split_documents(raw_docs) 
     
     # HuggingFace embedding model
@@ -22,7 +22,9 @@ def create_vector_db(path):
         persist_directory = "./vector_db"
     )
 
-    print("Knowledge Base Ready {len(documents)}")
+    print(f"Knowledge Base Ready {len(documents)}")
+      
+    
 
 
     
